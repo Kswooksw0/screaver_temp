@@ -1,0 +1,57 @@
+/* COUNTER CONTAINER */
+.counterContainer {
+  position: absolute;
+  top: 0; /* Adjust as needed to center on the belly */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* transform: translateX(-50%); */
+  display: flex;
+  /* flex-direction: column;  */
+  justify-content: center;
+  /* align-items: center; */
+  /* border: red solid 5px; */
+  /* z-index:1; */
+  cursor: pointer;
+  
+}
+
+/* Marmot image */
+.marmotImage {
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* user-select: none; */
+  /* pointer-events: none; */
+  
+}
+
+/* Counter number styling */
+.count {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 58%;
+  /* text-align: center; */
+  font-family: "LuckiestGuy", sans-serif;
+  color: var(--primary-color, white);
+  font-size: 5rem;
+  text-shadow: 0px var(--text-thickness, 7px) 0px var(--shadow-color, black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3em;
+  /* border: yellow solid 5px; */
+}
+
+.count.jiggle {
+  animation: jiggle 0.5s ease-out;
+}
+
+/* Jiggle animation */
+@keyframes jiggle {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}

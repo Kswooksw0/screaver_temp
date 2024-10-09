@@ -1,0 +1,56 @@
+/* Title container */
+.titleContainer {
+    /* display: flex;
+    flex-direction: row; 
+    align-items: center; 
+  
+    position: absolute;
+    top: 1%; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    gap: 1rem;  */
+    /* display: flex; */
+    /* border: blue solid 5px; */
+  }
+  
+  /* Screamot title */
+  .title {
+    font-family: "AntonSC", sans-serif;
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: var(--negative-text-thickness) var(--negative-text-thickness) 0px
+        var(--shadow-color),
+      var(--text-thickness) var(--negative-text-thickness) 0px var(--shadow-color),
+      var(--negative-text-thickness) var(--text-thickness) 0px var(--shadow-color),
+      var(--text-thickness) var(--text-thickness) 0px var(--shadow-color);
+    letter-spacing: var(--letter-spacing);
+    /* border: green solid 5px; */
+  }
+  
+/* Media queries for larger screens */
+
+/* Tablet size and small laptops (min-width: 768px) */
+@media (min-width: 768px) {
+
+    .titleContainer {
+        top: 0;
+    }
+    .title {
+      /* font-size: 4.5rem; */
+    }
+  
+
+  
+   
+  }
+  
+  /* Desktop size and larger laptops (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    .title {
+      font-size: 6rem;
+    }
+  
+  
+  }

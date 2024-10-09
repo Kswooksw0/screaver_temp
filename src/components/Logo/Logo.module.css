@@ -1,0 +1,30 @@
+/* Import Roboto for the smart contract address */
+@font-face {
+  font-family: "Roboto";
+  src: url("../../assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 110px; /* Adjust size as needed */
+}
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+  .logo {
+    width: 115px; /* Adjust for tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    width: 140px; /* Adjust for desktops */
+  }
+}

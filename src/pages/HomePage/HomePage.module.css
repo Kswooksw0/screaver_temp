@@ -1,0 +1,113 @@
+/* HomePage.module.css */
+
+/* Marmot container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Marmot image */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* MAIN COINTAINER FOR LOGO, TITLE, ADDRESS, ICONS */
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 5%;
+  /* z-index: 2; */
+  /* border: green solid 5px; */
+}
+
+/* TOP HALF FOR THE LOGO, TITLE */
+.topHalf {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+}
+
+/* BOTTOM HALF FOR THE ADDRESS, ICONS */
+.bottomHalf {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+/* COUNTER CONTAINER */
+.counterContainer {
+  position: absolute;
+  top: 58%; /* Adjust as needed to center on the belly */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Counter number styling */
+.count {
+  font-family: "LuckiestGuy", sans-serif;
+  color: var(--primary-color, white);
+  font-size: 5rem;
+  text-shadow: 0px var(--text-thickness, 7px) 0px var(--shadow-color, black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3em;
+  /* border: red solid 5px; */
+}
+
+.count.jiggle {
+  animation: jiggle 0.5s ease-out;
+}
+
+/* Jiggle animation */
+@keyframes jiggle {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Media queries for larger screens */
+
+/* Tablet size and small laptops (min-width: 768px) */
+@media (min-width: 768px) {
+  .mainContent {
+    top: 5%;
+  }
+  .bottomHalf {
+    width: 80%;
+  }
+  .count {
+    font-size: 6rem;
+  }
+}
+
+/* Desktop size and larger laptops (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .mainContent {
+    top: 2%;
+    width: 70%;
+  }
+  .bottomHalf {
+    width: 80%;
+  }
+
+  .count {
+    font-size: 7rem;
+  }
+}

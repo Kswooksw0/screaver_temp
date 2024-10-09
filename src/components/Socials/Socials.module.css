@@ -1,0 +1,81 @@
+/* SOCIALS CONTAINER */
+.socialsContainer {
+  display: flex;
+  justify-content: space-between;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100%;
+  /* padding: 0 2rem; */
+  gap: 1.5rem;
+  /* border: pink solid 5px; */
+}
+
+/* CONTRACT ADDRESS CONTAINER */
+.contractAddressContainer {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 2rem;
+  padding: 0.13em 0.9em;
+  border: 2px solid #ccc;
+  flex-grow: 1;
+  max-width: 65%;
+  overflow: hidden;
+  border: var(--shadow-color) solid 0.25rem;
+}
+
+.solscanLogo {
+  width: 36px;
+  height: 36px;
+  margin-right: 0.5rem;
+  padding: 0.1em 0;
+}
+
+.contractAddress {
+  color: black;
+  font-size: 0.8rem;
+  font-family: 'Roboto';
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+/* ICONS CONTAINER */
+.iconsContainer {
+  display: flex;
+  gap: 2rem;
+  /* margin: 0 1rem; */
+  justify-content: space-between;
+  /* border: orange solid 5px; */
+}
+
+/* Icon styling */
+.icon {
+  width: 40px;
+  /* margin: 0 1rem; */
+  transition: transform 0.2s ease-in-out;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* MEDIA QUERIES */
+
+
+@media (min-width: 768px) {
+  .socialsContainer {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contractAddress {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    width: 50px;
+  }
+}
