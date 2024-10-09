@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/screaver_temp/static/css/main.6a4242ff.css",
+    "main.js": "/screaver_temp/static/js/main.2b27c777.js",
+    "static/media/screaming_marmot_open.png": "/screaver_temp/static/media/screaming_marmot_open.e3e7c0b11144da1c0ac8.png",
+    "static/media/screaming_marmot_close.png": "/screaver_temp/static/media/screaming_marmot_close.d236dc0b6b4af80ffc0e.png",
+    "static/media/Roboto-Regular.ttf": "/screaver_temp/static/media/Roboto-Regular.27f62b53b93858475a7f.ttf",
+    "static/media/AntonSC-Regular.ttf": "/screaver_temp/static/media/AntonSC-Regular.04bf5842f1a5f3879b48.ttf",
+    "static/media/screamot_scream.mp4": "/screaver_temp/static/media/screamot_scream.1938529263eafc9d980c.mp4",
+    "static/media/screamot_logo.png": "/screaver_temp/static/media/screamot_logo.060fcaaab586ee927f85.png",
+    "static/media/LuckiestGuy-Regular.ttf": "/screaver_temp/static/media/LuckiestGuy-Regular.fd5a8f5e455b026973fc.ttf",
+    "static/media/x_icon.png": "/screaver_temp/static/media/x_icon.2a715e71d7410298aad9.png",
+    "static/media/solscan_logo.png": "/screaver_temp/static/media/solscan_logo.10f1c1608a32cc21327d.png",
+    "static/media/telegram.png": "/screaver_temp/static/media/telegram.f2be45e9beb1ce06299d.png",
+    "index.html": "/screaver_temp/index.html",
+    "main.6a4242ff.css.map": "/screaver_temp/static/css/main.6a4242ff.css.map",
+    "main.2b27c777.js.map": "/screaver_temp/static/js/main.2b27c777.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a4242ff.css",
+    "static/js/main.2b27c777.js"
+  ]
+}
