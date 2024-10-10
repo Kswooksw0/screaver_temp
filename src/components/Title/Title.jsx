@@ -7,7 +7,7 @@ export const Title = () => {
     // <div className={styles.titleContainer}>
     <>
       <Logo />
-      <h1 className={styles.title}>SCREAVER</h1>
+      <h1 className={styles.title}>SCREAMOT</h1>
     </>
     // </div>
   );

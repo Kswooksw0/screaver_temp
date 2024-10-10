@@ -54,7 +54,7 @@ const HomePage = () => {
     timeoutRef.current = setTimeout(() => {
       setMouthOpen(false);
     }, 500);
-    // alert(window.innerWidth)
+    alert(window.innerWidth)
   };
 
   return (

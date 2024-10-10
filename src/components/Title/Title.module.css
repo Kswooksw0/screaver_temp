@@ -16,8 +16,9 @@
   
   /* Screamot title */
   .title {
-    font-family: "AntonSC", sans-serif;
-    font-size: 4.5rem;
+    font-family: "ArchivoBlack", sans-serif;
+    /* font-size: 4.5rem; */
+    font-size: clamp(2.5rem, 6vw, 6rem); /* Dynamically adjusts from 2rem to 6rem */
     font-weight: bold;
     color: white;
     text-shadow: var(--negative-text-thickness) var(--negative-text-thickness) 0px
@@ -26,7 +27,10 @@
       var(--negative-text-thickness) var(--text-thickness) 0px var(--shadow-color),
       var(--text-thickness) var(--text-thickness) 0px var(--shadow-color);
     letter-spacing: var(--letter-spacing);
-    /* border: green solid 5px; */
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    border: green solid 5px;
   }
   
 /* Media queries for larger screens */
