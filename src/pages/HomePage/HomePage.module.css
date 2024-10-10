@@ -51,19 +51,20 @@
 /* COUNTER CONTAINER */
 .counterContainer {
   position: absolute;
-  top: 58%; /* Adjust as needed to center on the belly */
+  top: 55%; /* Adjust as needed to center on the belly */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
+  border: purple solid 5px;
 }
 
 /* Counter number styling */
 .count {
   font-family: "LuckiestGuy", sans-serif;
   color: var(--primary-color, white);
-  font-size: 5rem;
+  font-size: clamp(6rem, 10vw, 8rem);
   text-shadow: 0px var(--text-thickness, 7px) 0px var(--shadow-color, black);
   white-space: nowrap;
   overflow: hidden;
@@ -93,22 +94,23 @@
   .bottomHalf {
     width: 80%;
   }
-  .count {
+  /* .count {
     font-size: 6rem;
-  }
+  } */
 }
 
 /* Desktop size and larger laptops (min-width: 1024px) */
 @media (min-width: 1024px) {
   .mainContent {
-    top: 2%;
+    /* need to change to some other value when in TV mode(1024 x 720) as the marmot's face is covered.  */
+    top: 1.5%;
     width: 70%;
   }
   .bottomHalf {
     width: 80%;
   }
 
-  .count {
+  /* .count {
     font-size: 7rem;
-  }
+  } */
 }
