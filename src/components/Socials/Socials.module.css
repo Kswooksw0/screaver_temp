@@ -64,7 +64,7 @@
 /* MEDIA QUERIES */
 
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .socialsContainer {
     width: 75%;
   }
@@ -78,4 +78,39 @@
   .icon {
     width: 50px;
   }
+} */
+
+/* Media queries for larger screens */
+
+/* Small devices (smartphones) ----------- */
+/* Styles for smartphones (CSS viewport width < 768px) */
+@media (max-width: 768px) {
+  /* .socialsContainer {
+    width: 75%;
+  } */
+}
+
+/* Medium devices (tablets and small laptops) ----------- */
+/* Styles for tablets and small laptops (CSS viewport width 768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .socialsContainer {
+    width: 75%;
+  }
+}
+
+/* Large devices (laptops and desktops) ----------- */
+/* Styles for laptops and desktops (CSS viewport width 1024px - 1440px) */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .contractAddress {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    width: 50px;
+  }
+}
+
+/* Extra large devices (large desktops) ----------- */
+/* Styles for large desktops (CSS viewport width > 1440px) */
+@media (min-width: 1441px) {
 }

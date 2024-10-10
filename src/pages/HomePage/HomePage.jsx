@@ -34,28 +34,39 @@ const HomePage = () => {
 
   // Handle the click action and audio
   const handleClick = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
+    // if (timeoutRef.current) {
+    //   clearTimeout(timeoutRef.current);
+    // }
+    audioRef.current.pause();
+    audioRef.current.currentTime = 0;
+    audioRef.current.play();
 
     if (!isMouthOpen) {
       setCounter(counter + 1);
       setShouldJiggle(true);
 
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-        audioRef.current.play();
-      }
+      // if (audioRef.current) {
+      //   audioRef.current.pause();
+      //   audioRef.current.currentTime = 0;
+      //   audioRef.current.play();
+      // }
     }
 
     setMouthOpen(true);
 
     timeoutRef.current = setTimeout(() => {
       setMouthOpen(false);
-    }, 500);
+    }, 250);
     // alert(window.innerWidth)
   };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current); // Clean up on unmount
+      }
+    };
+  }, []);
 
   return (
     <div className={styles.container} onClick={handleClick}>
@@ -80,7 +91,6 @@ const HomePage = () => {
       <div className={styles.counterContainer}>
         <h1 className={styles.count}>{counter}</h1>
       </div>
-
     </div>
   );
 };

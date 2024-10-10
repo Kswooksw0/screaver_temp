@@ -79,15 +79,35 @@
 
 /* Jiggle animation */
 @keyframes jiggle {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-  20%, 40%, 60%, 80% { transform: translateX(5px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
 }
 
 /* Media queries for larger screens */
 
-/* Tablet size and small laptops (min-width: 768px) */
-@media (min-width: 768px) {
+/* Small devices (smartphones) ----------- */
+/* Styles for smartphones (CSS viewport width < 768px) */
+@media (max-width: 767px) {
+}
+
+/* Medium devices (tablets and small laptops) ----------- */
+/* Styles for tablets and small laptops (CSS viewport width 768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
   .mainContent {
     top: 5%;
   }
@@ -99,8 +119,9 @@
   } */
 }
 
-/* Desktop size and larger laptops (min-width: 1024px) */
-@media (min-width: 1024px) {
+/* Large devices (laptops and desktops) ----------- */
+/* Styles for laptops and desktops (CSS viewport width 1024px - 1440px) */
+@media (min-width: 1024px) and (max-width: 1440px) {
   .mainContent {
     /* need to change to some other value when in TV mode(1024 x 720) as the marmot's face is covered.  */
     top: 1.5%;
@@ -109,8 +130,17 @@
   .bottomHalf {
     width: 80%;
   }
+}
 
-  /* .count {
-    font-size: 7rem;
-  } */
+/* Extra large devices (large desktops) ----------- */
+/* Styles for large desktops (CSS viewport width > 1440px) */
+@media (min-width: 1441px) {
+  .mainContent {
+    /* need to change to some other value when in TV mode(1024 x 720) as the marmot's face is covered.  */
+    top: 1.5%;
+    width: 70%;
+  }
+  .bottomHalf {
+    width: 80%;
+  }
 }
