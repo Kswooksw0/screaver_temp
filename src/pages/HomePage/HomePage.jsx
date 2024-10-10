@@ -3,7 +3,6 @@ import marmotClose from "../../assets/images/screaming_marmot_close.png"; // Cor
 import marmotOpen from "../../assets/images/screaming_marmot_open.png"; // Correct path
 import screamSound from "../../assets/media/screamot_scream.mp4"; // Import the MP4 file
 import styles from "./HomePage.module.css";
-import { Logo } from "../../components/Logo/Logo";
 import { Title } from "../../components/Title/Title";
 import { Socials } from "../../components/Socials/Socials";
 
@@ -39,24 +38,13 @@ const HomePage = () => {
     // }
     audioRef.current.pause();
     audioRef.current.currentTime = 0;
-
     audioRef.current.play().catch((error) => {
       alert("Playback failed:", error);
     });
 
-    // audioRef.current.pause();
-    // audioRef.current.currentTime = 0;
-    // audioRef.current.play();
-
     if (!isMouthOpen) {
       setCounter(counter + 1);
       setShouldJiggle(true);
-
-      // if (audioRef.current) {
-      //   audioRef.current.pause();
-      //   audioRef.current.currentTime = 0;
-      //   audioRef.current.play();
-      // }
     }
 
     setMouthOpen(true);
@@ -77,6 +65,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.container} onClick={handleClick}>
+      {/* Marmot image rendering with audio*/}
       <img
         src={isMouthOpen ? marmotOpen : marmotClose}
         alt="Screaming Marmot"

@@ -1,35 +1,17 @@
-/* Title container */
-.titleContainer {
-  /* display: flex;
-    flex-direction: row; 
-    align-items: center; 
-  
-    position: absolute;
-    top: 1%; 
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    gap: 1rem;  */
-  /* display: flex; */
-  /* border: blue solid 5px; */
-}
-
-/* Screamot title */
+/* SCREAMOT TITLE */
 .title {
   font-family: "ArchivoBlack", sans-serif;
-  /* font-size: 4.5rem; */
   font-size: clamp(
     2.4rem,
     7vw,
     6rem
-  ); /* Dynamically adjusts from 2rem to 6rem */
+  ); 
   font-weight: bold;
   color: white;
-  text-shadow: var(--negative-text-thickness) var(--negative-text-thickness) 0px
-      var(--shadow-color),
-    var(--text-thickness) var(--negative-text-thickness) 0px var(--shadow-color),
-    var(--negative-text-thickness) var(--text-thickness) 0px var(--shadow-color),
-    var(--text-thickness) var(--text-thickness) 0px var(--shadow-color);
+  text-shadow: var(--negative-text-thickness) var(--negative-text-thickness) 0px var(--shadow-color),
+               var(--text-thickness) var(--negative-text-thickness) 0px var(--shadow-color),
+               var(--negative-text-thickness) var(--text-thickness) 0px var(--shadow-color),
+               var(--text-thickness) var(--text-thickness) 0px var(--shadow-color);
   letter-spacing: var(--letter-spacing);
   max-width: 100%;
   display: flex;
@@ -37,12 +19,11 @@
   /* border: green solid 5px; */
 }
 
-/* Media queries for larger screens */
+/*  MEDIA QUERIES for larger screens */
 
 /* Small devices (smartphones) ----------- */
 /* Styles for smartphones (CSS viewport width < 768px) */
-@media (max-width: 767px) {
-}
+@media (max-width: 767px) {}
 
 /* Medium devices (tablets and small laptops) ----------- */
 /* Styles for tablets and small laptops (CSS viewport width 768px - 1023px) */
@@ -50,11 +31,7 @@
   .titleContainer {
     top: 0;
   }
-  .title {
-    /* font-size: 4.5rem; */
-  }
 }
-
 /* Large devices (laptops and desktops) ----------- */
 /* Styles for laptops and desktops (CSS viewport width 1024px - 1440px) */
 @media (min-width: 1024px) and (max-width: 1440px) {
@@ -62,7 +39,6 @@
     top: 0;
   }
 }
-
 /* Extra large devices (large desktops) ----------- */
 /* Styles for large desktops (CSS viewport width > 1440px) */
 @media (min-width: 1441px) {
