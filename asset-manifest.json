@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/screaver_temp/static/css/main.4039d36a.css",
-    "main.js": "/screaver_temp/static/js/main.1e144acb.js",
+    "main.js": "/screaver_temp/static/js/main.f8276591.js",
     "static/media/screaming_marmot_open.png": "/screaver_temp/static/media/screaming_marmot_open.e3e7c0b11144da1c0ac8.png",
     "static/media/screaming_marmot_close.png": "/screaver_temp/static/media/screaming_marmot_close.d236dc0b6b4af80ffc0e.png",
     "static/media/Roboto-Regular.ttf": "/screaver_temp/static/media/Roboto-Regular.27f62b53b93858475a7f.ttf",
@@ -15,10 +15,10 @@
     "static/media/telegram.png": "/screaver_temp/static/media/telegram.f2be45e9beb1ce06299d.png",
     "index.html": "/screaver_temp/index.html",
     "main.4039d36a.css.map": "/screaver_temp/static/css/main.4039d36a.css.map",
-    "main.1e144acb.js.map": "/screaver_temp/static/js/main.1e144acb.js.map"
+    "main.f8276591.js.map": "/screaver_temp/static/js/main.f8276591.js.map"
   },
   "entrypoints": [
     "static/css/main.4039d36a.css",
-    "static/js/main.1e144acb.js"
+    "static/js/main.f8276591.js"
   ]
 }
