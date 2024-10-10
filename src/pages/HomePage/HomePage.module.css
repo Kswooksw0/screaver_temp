@@ -36,7 +36,7 @@
 /* TOP HALF FOR THE LOGO, TITLE */
 .topHalf {
   display: flex;
-  width: 80%;
+  /* width: 80%; */
   justify-content: center;
   border: orange solid 5px;
 }

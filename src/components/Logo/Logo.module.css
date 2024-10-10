@@ -17,7 +17,7 @@
   /* width: 110px;  */
   width: 15vw; /* Adjust logo size dynamically based on viewport width */
   max-width: 150px; /* Set a maximum width to prevent it from becoming too large */
-  height: auto; /* Maintain the aspect ratio */
+  /* height: auto;  */
 }
 
 /* Media queries for larger screens */

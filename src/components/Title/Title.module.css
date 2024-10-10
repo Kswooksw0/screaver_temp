@@ -18,7 +18,7 @@
   .title {
     font-family: "ArchivoBlack", sans-serif;
     /* font-size: 4.5rem; */
-    font-size: clamp(2.5rem, 6vw, 6rem); /* Dynamically adjusts from 2rem to 6rem */
+    font-size: clamp(2.4rem, 7vw, 6rem); /* Dynamically adjusts from 2rem to 6rem */
     font-weight: bold;
     color: white;
     text-shadow: var(--negative-text-thickness) var(--negative-text-thickness) 0px
@@ -52,9 +52,9 @@
   
   /* Desktop size and larger laptops (min-width: 1024px) */
   @media (min-width: 1024px) {
-    .title {
+    /* .title {
       font-size: 6rem;
-    }
+    } */
   
   
   }
