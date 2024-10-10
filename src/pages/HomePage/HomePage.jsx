@@ -39,7 +39,14 @@ const HomePage = () => {
     // }
     audioRef.current.pause();
     audioRef.current.currentTime = 0;
-    audioRef.current.play();
+
+    audioRef.current.play().catch((error) => {
+      alert("Playback failed:", error);
+    });
+
+    // audioRef.current.pause();
+    // audioRef.current.currentTime = 0;
+    // audioRef.current.play();
 
     if (!isMouthOpen) {
       setCounter(counter + 1);
