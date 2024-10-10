@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/screaver_temp/static/css/main.6cd15297.css",
+    "main.css": "/screaver_temp/static/css/main.5c726650.css",
     "main.js": "/screaver_temp/static/js/main.af465bd8.js",
     "static/media/screaming_marmot_open.png": "/screaver_temp/static/media/screaming_marmot_open.e3e7c0b11144da1c0ac8.png",
     "static/media/screaming_marmot_close.png": "/screaver_temp/static/media/screaming_marmot_close.d236dc0b6b4af80ffc0e.png",
@@ -14,11 +14,11 @@
     "static/media/solscan_logo.png": "/screaver_temp/static/media/solscan_logo.10f1c1608a32cc21327d.png",
     "static/media/telegram.png": "/screaver_temp/static/media/telegram.f2be45e9beb1ce06299d.png",
     "index.html": "/screaver_temp/index.html",
-    "main.6cd15297.css.map": "/screaver_temp/static/css/main.6cd15297.css.map",
+    "main.5c726650.css.map": "/screaver_temp/static/css/main.5c726650.css.map",
     "main.af465bd8.js.map": "/screaver_temp/static/js/main.af465bd8.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cd15297.css",
+    "static/css/main.5c726650.css",
     "static/js/main.af465bd8.js"
   ]
 }
