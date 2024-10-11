@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/screaver_temp/static/css/main.04488c85.css",
-    "main.js": "/screaver_temp/static/js/main.4aa757c4.js",
+    "main.css": "/screaver_temp/static/css/main.75871c45.css",
+    "main.js": "/screaver_temp/static/js/main.22cfe059.js",
+    "static/js/952.bf1c4be3.chunk.js": "/screaver_temp/static/js/952.bf1c4be3.chunk.js",
     "static/media/screaming_marmot_open.png": "/screaver_temp/static/media/screaming_marmot_open.e3e7c0b11144da1c0ac8.png",
     "static/media/screaming_marmot_close.png": "/screaver_temp/static/media/screaming_marmot_close.d236dc0b6b4af80ffc0e.png",
     "static/media/Roboto-Regular.ttf": "/screaver_temp/static/media/Roboto-Regular.27f62b53b93858475a7f.ttf",
@@ -14,11 +15,12 @@
     "static/media/solscan_logo.png": "/screaver_temp/static/media/solscan_logo.10f1c1608a32cc21327d.png",
     "static/media/telegram.png": "/screaver_temp/static/media/telegram.f2be45e9beb1ce06299d.png",
     "index.html": "/screaver_temp/index.html",
-    "main.04488c85.css.map": "/screaver_temp/static/css/main.04488c85.css.map",
-    "main.4aa757c4.js.map": "/screaver_temp/static/js/main.4aa757c4.js.map"
+    "main.75871c45.css.map": "/screaver_temp/static/css/main.75871c45.css.map",
+    "main.22cfe059.js.map": "/screaver_temp/static/js/main.22cfe059.js.map",
+    "952.bf1c4be3.chunk.js.map": "/screaver_temp/static/js/952.bf1c4be3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.04488c85.css",
-    "static/js/main.4aa757c4.js"
+    "static/css/main.75871c45.css",
+    "static/js/main.22cfe059.js"
   ]
 }
