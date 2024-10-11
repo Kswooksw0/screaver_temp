@@ -1,11 +1,3 @@
-/* Import Roboto for the smart contract address */
-@font-face {
-  font-family: "Roboto";
-  src: url("../../assets/fonts/Roboto-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 .logoContainer {
   display: flex;
   justify-content: center;

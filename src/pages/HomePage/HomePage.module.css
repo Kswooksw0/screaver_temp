@@ -94,6 +94,30 @@
   }
 }
 
+
+/* Global Counter container styling */
+.globalCounterContainer {
+  position: absolute;
+  bottom: 2%; /* Position the container at the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.6); /* White translucent background */
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for better visibility */
+  text-align: center;
+  z-index: 10; /* Ensures the global counter stays on top */
+}
+
+/* Global Counter text styling */
+.globalCount {
+  font-family: "LuckiestGuy", sans-serif;
+  font-size: 2rem;
+  color: black; /* Text in black */
+  font-weight: bold;
+}
+
+
 /*  MEDIA QUERIES for larger screens */
 
 /* Small devices (smartphones) ----------- */
