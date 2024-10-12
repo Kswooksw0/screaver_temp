@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/images/screamot_logo.png';
+import logo from '../../assets/images/screamot_logo_02.png';
 import styles from './Logo.module.css';
 
 export const Logo = () => {
