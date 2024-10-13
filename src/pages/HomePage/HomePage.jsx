@@ -1,19 +1,27 @@
 import React, { useState, useEffect, useRef } from "react";
-import { supabase } from "../../supabaseClient"; // Correctly import the client
+import { useNavigate } from "react-router-dom"; // For navigation
+import { supabase } from "../../supabaseClient"; 
 import marmotClose from "../../assets/images/screaming_marmot_close.png";
 import marmotOpen from "../../assets/images/screaming_marmot_open.png";
 import screamSound from "../../assets/media/screamot_scream.mp4";
 import styles from "./HomePage.module.css";
 import { Title } from "../../components/Title/Title";
 import { Socials } from "../../components/Socials/Socials";
+import { ContractAddress } from "../../components/ContractAddress/ContractAddress";
+
+// utility
+import { isMultipleOfMillion } from "../../lib/isMultipleOfMillion";
 
 const HomePage = () => {
   const [isMouthOpen, setMouthOpen] = useState(false);
-  const [counter, setCounter] = useState(0); // Local user counter
-  const [globalCounter, setGlobalCounter] = useState(0); // Global scream counter
+  const [counter, setCounter] = useState(0); 
+  const [globalCounter, setGlobalCounter] = useState(0); 
   const [shouldJiggle, setShouldJiggle] = useState(false);
   const audioRef = useRef(null);
   const timeoutRef = useRef(null);
+  const navigate = useNavigate(); // Navigation hook
+
+  const contractAddress = "CA: 7GCihgDB8fe6KNjn2MYtkzZcRJQy3t9GHdC8uHYmW2hr";
 
   // Fetch global scream counter from Supabase
   useEffect(() => {
@@ -27,30 +35,36 @@ const HomePage = () => {
       if (error) {
         console.error("Error fetching global counter:", error);
       } else if (data) {
-        setGlobalCounter(data.total_screams); // Set global counter from DB
+        setGlobalCounter(data.total_screams); 
       }
     };
 
-    // Fetch initial value
     fetchGlobalCounter();
 
-    // Subscribe to real-time updates for the global scream counter
     const screamSubscription = supabase
-      .channel("scream_counter_channel") // New channel-based subscription
+      .channel("scream_counter_channel")
       .on(
         "postgres_changes",
         { event: "UPDATE", schema: "public", table: "scream_counter" },
         (payload) => {
-          setGlobalCounter(payload.new.total_screams); // Real-time updates
+          setGlobalCounter(payload.new.total_screams); 
         }
       )
       .subscribe();
 
-    // Clean up subscription on component unmount
+    
+
     return () => {
       supabase.removeChannel(screamSubscription);
     };
   }, []);
+
+  // useEffect(() => {
+  //   // if the number of screams is a multiple of millions, alert
+  //   if(isMultipleOfMillion(globalCounter)) {
+  //     console.log('Jackpot!');
+  //   }
+  // })
 
   // Jiggle animation logic
   useEffect(() => {
@@ -59,7 +73,6 @@ const HomePage = () => {
       const countElement = document.querySelector(`.${styles.count}`);
       countElement.classList.add(styles.jiggle);
 
-      // Set the timeout to remove the jiggle class after 500ms
       timer = setTimeout(() => {
         countElement.classList.remove(styles.jiggle);
         setShouldJiggle(false);
@@ -81,16 +94,16 @@ const HomePage = () => {
     if (!isMouthOpen) {
       setCounter(counter + 1);
       setShouldJiggle(true);
+      setMouthOpen(true);
 
-      // Increment global scream count in Supabase
-      const { error } = await supabase.rpc("increment_counter", {}); // Call Supabase function to increment
+      const { error } = await supabase.rpc("increment_counter", {});
+
+      
 
       if (error) {
         console.error("Error updating global counter:", error);
       }
     }
-
-    setMouthOpen(true);
 
     timeoutRef.current = setTimeout(() => {
       setMouthOpen(false);
@@ -100,37 +113,56 @@ const HomePage = () => {
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current); // Clean up on unmount
+        clearTimeout(timeoutRef.current); 
       }
     };
   }, []);
 
+  // Handle navigation for button or logo
+  const navigateToAboutPage = () => {
+    // alert('hello')
+    navigate("/about-scream");
+  };
+
   return (
-    <div className={styles.container} onClick={handleClick}>
-      {/* Marmot image rendering with audio */}
-      <img
-        src={isMouthOpen ? marmotOpen : marmotClose}
-        alt="Screaming Marmot"
-        className={styles.image}
-      />
+    <div className={styles.container} onClick={handleClick} >
+      <div className={styles.imageContainer}>
+        <img
+          src={isMouthOpen ? marmotOpen : marmotClose}
+          alt="Screaming Marmot"
+          className={styles.image}
+        />
+      </div>
       <audio ref={audioRef} src={screamSound} preload="auto" />
 
-      {/* Main Content */}
-      <div className={styles.mainContent}>
-        <div className={styles.topHalf}>
-          <Title />
+      <div className={styles.mainContent} >
+        {/* Reason why alert saying 'Playback failed:' pops up when clicking: the issue is occurring 
+        because you have both the handleClick event on the container and the logo element itself. 
+        When you click the logo in mobile view, both the click event on the logo (which leads to the About page) 
+        and the global click handler (which plays the scream audio) are triggered. This results in the audio still trying to play, 
+        and when you navigate away from the Home page, the audio playback gets interrupted, leading to the error. To resolve this, 
+        Use event.stopPropagation() in the handleLogoClick function in the Logo.jsx file. 
+        This will prevent the click event from bubbling up to the parent container. event.stopPropagation() ensures that when you 
+        click on the logo, the click event doesn't propagate to its parent containers, which include the handleClick function that 
+        plays the scream audio. This will prevent the "Playback failed" alert and ensure only navigation occurs when 
+        clicking the logo in mobile mode.*/}
+        <div className={styles.topHalf}  >
+          <Title /> 
         </div>
-        <div className={styles.bottomHalf}>
-          <Socials />
+        <div className={styles.bottomHalf} >
+          <div className={styles.infoBoxContainer}>
+            {/* Smart contract address container for larger screens */}
+            <ContractAddress contractAddress={contractAddress}/>
+            {/* Icons for socials */}
+            <Socials navigateToAboutPage={navigateToAboutPage} /> 
+          </div>
         </div>
       </div>
 
-      {/* Local counter section (for current user) (separate from mainContent) */}
       <div className={styles.counterContainer}>
         <h1 className={styles.count}>{counter}</h1>
       </div>
 
-      {/* Global counter section */}
       <div className={styles.globalCounterContainer}>
         <h2 className={styles.globalCount}>Total Screams: {globalCounter}</h2>
       </div>

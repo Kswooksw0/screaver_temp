@@ -1,4 +1,10 @@
 /* SCREAMOT TITLE */
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  /* border: red solid 5px; */
+  padding: 0.4em;
+}
 .title {
   font-family: "ArchivoBlack", sans-serif;
   font-size: clamp(
