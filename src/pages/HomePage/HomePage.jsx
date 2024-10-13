@@ -98,8 +98,6 @@ const HomePage = () => {
 
       const { error } = await supabase.rpc("increment_counter", {});
 
-      
-
       if (error) {
         console.error("Error updating global counter:", error);
       }

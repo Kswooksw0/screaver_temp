@@ -1,9 +1,7 @@
 import React from "react";
 import xIcon from "../../assets/icons/x_icon.png"; // Correct path
 import telegramIcon from "../../assets/icons/telegram.png"; // Correct path
-
 import styles from "./Socials.module.css";
-import { ContractAddress } from "../ContractAddress/ContractAddress";
 
 export const Socials = ({ navigateToAboutPage }) => {
   // Example smart contract address
@@ -11,8 +9,6 @@ export const Socials = ({ navigateToAboutPage }) => {
 
   const handleSocialsClick = (event) => {
     event.stopPropagation();
-    // navigateToAboutPage();
-    // alert('hello world')
   };
 
   return (

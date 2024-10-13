@@ -3,8 +3,8 @@
   display: flex;
   gap: 2rem;
   /* margin: 0 1rem; */
-  justify-content: space-between;
-  /* border: orange solid 5px; */
+  justify-content: center;
+  /* border: green solid 5px; */
 }
 
 /* Icon styling */
