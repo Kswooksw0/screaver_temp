@@ -1,12 +1,19 @@
-.aboutScreamContainer {
-  background-color: orange;
+body {
+    overflow: scroll;
 }
+
+.aboutScreamContainer {
+    background-color: orange;
+    overflow: hidden;
+  }
+
 
 .descContainer {
   display: flex;
   justify-content: center;
   margin: 2em 0;
   border: blue solid 5px;
+  transform: translateX(-100%); /* Move off-screen to the left */
 }
 .desc {
     width: 80%;
@@ -15,6 +22,30 @@
     font-family: 'ArchivoBlack';
     font-weight:bolder;
   border: red solid 5px;
+}
+
+.tokenomics {
+    transform: translateX(100%); /* Move off-screen to the right */
+    /* border: brown solid 5px; */
+    margin: 2em 0;
+  }
+
+/* Description and Tokenomics Container Initial State */
+.descContainer,
+.tokenomics {
+  opacity: 0; /* Start with hidden */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Animate opacity and position */
+}
+
+/* Add Active Class for Animation */
+.slide-in-left {
+  opacity: 1;
+  transform: translateX(0); /* Slide into view from the left */
+}
+
+.slide-in-right {
+  opacity: 1;
+  transform: translateX(0); /* Slide into view from the right */
 }
 
 /*  MEDIA QUERIES for larger screens */

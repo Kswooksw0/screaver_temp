@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import xIcon from "../../assets/icons/x_icon.png"; // Correct path
 import telegramIcon from "../../assets/icons/telegram.png"; // Correct path
 import styles from "./Socials.module.css";

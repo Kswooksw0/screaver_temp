@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ContractAddress.module.css";
 import solscanLogo from "../../assets/images/solscan_logo.png"; // Correct path
 
-export const ContractAddress = ({ contractAddress }) => {
+export const ContractAddress = React.memo(({ contractAddress }) => {
   const handleCAClick = (event) => {
     event.stopPropagation();
     // navigateToAboutPage();
@@ -20,4 +20,4 @@ export const ContractAddress = ({ contractAddress }) => {
       </div>
     </>
   );
-};
+});

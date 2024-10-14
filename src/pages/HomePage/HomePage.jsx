@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom"; // For navigation
-import { supabase } from "../../supabaseClient"; 
+import { supabase } from "../../supabaseClient";
 import marmotClose from "../../assets/images/screaming_marmot_close.png";
 import marmotOpen from "../../assets/images/screaming_marmot_open.png";
 import screamSound from "../../assets/media/screamot_scream.mp4";
@@ -14,8 +14,8 @@ import { isMultipleOfMillion } from "../../lib/isMultipleOfMillion";
 
 const HomePage = () => {
   const [isMouthOpen, setMouthOpen] = useState(false);
-  const [counter, setCounter] = useState(0); 
-  const [globalCounter, setGlobalCounter] = useState(0); 
+  const [counter, setCounter] = useState(0);
+  const [globalCounter, setGlobalCounter] = useState(0);
   const [shouldJiggle, setShouldJiggle] = useState(false);
   const audioRef = useRef(null);
   const timeoutRef = useRef(null);
@@ -35,7 +35,7 @@ const HomePage = () => {
       if (error) {
         console.error("Error fetching global counter:", error);
       } else if (data) {
-        setGlobalCounter(data.total_screams); 
+        setGlobalCounter(data.total_screams);
       }
     };
 
@@ -47,12 +47,10 @@ const HomePage = () => {
         "postgres_changes",
         { event: "UPDATE", schema: "public", table: "scream_counter" },
         (payload) => {
-          setGlobalCounter(payload.new.total_screams); 
+          setGlobalCounter(payload.new.total_screams);
         }
       )
       .subscribe();
-
-    
 
     return () => {
       supabase.removeChannel(screamSubscription);
@@ -111,10 +109,18 @@ const HomePage = () => {
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current); 
+        clearTimeout(timeoutRef.current);
       }
     };
   }, []);
+
+  // need to find a way to prevent this effect from running everytime there is a click
+  useEffect(() => {
+    // console.log(globalCounter);
+    if (counter > 0 && isMultipleOfMillion(globalCounter + 1)) {
+      console.log('millionth!');
+    }
+  }, [counter]);
 
   // Handle navigation for button or logo
   const navigateToAboutPage = () => {
@@ -123,17 +129,18 @@ const HomePage = () => {
   };
 
   return (
-    <div className={styles.container} onClick={handleClick} >
+    <div className={styles.container} onClick={handleClick}>
+      <audio ref={audioRef} src={screamSound} preload="auto" />
       <div className={styles.imageContainer}>
         <img
+          // loading="lazy"
           src={isMouthOpen ? marmotOpen : marmotClose}
           alt="Screaming Marmot"
           className={styles.image}
         />
       </div>
-      <audio ref={audioRef} src={screamSound} preload="auto" />
 
-      <div className={styles.mainContent} >
+      <div className={styles.mainContent}>
         {/* Reason why alert saying 'Playback failed:' pops up when clicking: the issue is occurring 
         because you have both the handleClick event on the container and the logo element itself. 
         When you click the logo in mobile view, both the click event on the logo (which leads to the About page) 
@@ -144,15 +151,15 @@ const HomePage = () => {
         click on the logo, the click event doesn't propagate to its parent containers, which include the handleClick function that 
         plays the scream audio. This will prevent the "Playback failed" alert and ensure only navigation occurs when 
         clicking the logo in mobile mode.*/}
-        <div className={styles.topHalf}  >
-          <Title /> 
+        <div className={styles.topHalf}>
+          <Title />
         </div>
-        <div className={styles.bottomHalf} >
+        <div className={styles.bottomHalf}>
           <div className={styles.infoBoxContainer}>
             {/* Smart contract address container for larger screens */}
-            <ContractAddress contractAddress={contractAddress}/>
+            <ContractAddress contractAddress={contractAddress} />
             {/* Icons for socials */}
-            <Socials navigateToAboutPage={navigateToAboutPage} /> 
+            <Socials navigateToAboutPage={navigateToAboutPage} />
           </div>
         </div>
       </div>
@@ -167,6 +174,7 @@ const HomePage = () => {
     </div>
   );
 };
+
 
 export default HomePage;
 
@@ -205,10 +213,6 @@ export default HomePage;
 
 //   Displays updated globalCounter.
 
-
-
-
-
 /* WHAT THE .CHANNEL() FUNCTION MEANS */
 
 // The abstraction created by .channel('scream_counter_channel') is only temporary and tied to the lifecycle of the React component (in this case, HomePage.jsx).
@@ -226,9 +230,3 @@ export default HomePage;
 // Summary:
 // Temporary: The WebSocket subscription via .channel() is temporary and tied to the component's lifecycle.
 // Cleanup: It is removed when the component unmounts (on page navigation) or when the browser session ends (closing the tab or session).
-
-
-
-
-
-

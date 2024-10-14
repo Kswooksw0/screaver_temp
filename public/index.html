@@ -2,10 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>React App</title>
+    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="/assets/fonts/ArchivoBlack-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="/assets/fonts/AntonSC-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="/assets/fonts/LuckiestGuy-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous"> 
+    <link rel="preload" href="/assets/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous"> 
+
+
+    <!-- Preload critical images -->
+    <link rel="preload" href="/assets/images/screaming_marmot_open.png" as="image">
+    <link rel="preload" href="/assets/images/screaming_marmot_close.png" as="image">
+
+    <title>SCREAMOT</title>
   </head>
   <body>
     <div id="root"></div>
