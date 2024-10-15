@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/screaver_temp/static/css/main.afa96aa5.css",
+    "main.css": "/screaver_temp/static/css/main.258858f2.css",
     "main.js": "/screaver_temp/static/js/main.56f3cc0c.js",
     "static/css/281.1d5d2796.chunk.css": "/screaver_temp/static/css/281.1d5d2796.chunk.css",
     "static/js/281.4533f6e4.chunk.js": "/screaver_temp/static/js/281.4533f6e4.chunk.js",
@@ -16,14 +16,14 @@
     "static/media/screamot_scream.mp4": "/screaver_temp/static/media/screamot_scream.a4b2f0e312c3f2c2b4da.mp4",
     "static/media/telegram.png": "/screaver_temp/static/media/telegram.f2be45e9beb1ce06299d.png",
     "index.html": "/screaver_temp/index.html",
-    "main.afa96aa5.css.map": "/screaver_temp/static/css/main.afa96aa5.css.map",
+    "main.258858f2.css.map": "/screaver_temp/static/css/main.258858f2.css.map",
     "main.56f3cc0c.js.map": "/screaver_temp/static/js/main.56f3cc0c.js.map",
     "281.1d5d2796.chunk.css.map": "/screaver_temp/static/css/281.1d5d2796.chunk.css.map",
     "281.4533f6e4.chunk.js.map": "/screaver_temp/static/js/281.4533f6e4.chunk.js.map",
     "952.bf1c4be3.chunk.js.map": "/screaver_temp/static/js/952.bf1c4be3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.afa96aa5.css",
+    "static/css/main.258858f2.css",
     "static/js/main.56f3cc0c.js"
   ]
 }
