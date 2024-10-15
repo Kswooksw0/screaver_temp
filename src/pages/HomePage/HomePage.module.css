@@ -23,7 +23,7 @@
   object-fit: cover;
   user-select: none;
   pointer-events: none;
-  border: green solid 5px;
+  /* border: green solid 5px; */
 }
 
 /* MAIN COINTAINER FOR LOGO, TITLE, ADDRESS, ICONS */
@@ -58,7 +58,7 @@
   justify-content: space-between;
   /* justify-content: center; */
   align-items: center;
-  width: 100%;
+  width: 80%;
   /* padding: 0 2rem; */
   gap: 1.5rem;
   /* border: pink solid 5px; */
@@ -170,6 +170,9 @@
   .bottomHalf {
     width: 80%;
   }
+  .infoBoxContainer {
+    width: 100%;
+  }
 }
 
 /* Extra large devices (large desktops) ----------- */
@@ -182,5 +185,9 @@
   }
   .bottomHalf {
     width: 80%;
+  }
+  .infoBoxContainer {
+    justify-content: center;
+    gap: 2rem;
   }
 }

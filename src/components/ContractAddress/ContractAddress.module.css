@@ -44,7 +44,14 @@
   .contractAddress {
     font-size: 0.9rem;
   }
+  .contractAddressContainer {
+    max-width: 45%;
+  }
 }
 /* Extra large devices (large desktops) ----------- */
 /* Styles for large desktops (CSS viewport width > 1440px) */
-@media (min-width: 1441px) {}
+@media (min-width: 1441px) {
+  .contractAddressContainer {
+    max-width: 35%;
+  }
+}
