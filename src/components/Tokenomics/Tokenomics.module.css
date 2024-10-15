@@ -1,9 +1,9 @@
 .tokenomicsContainer {
-    border: red solid 5px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+    /* border: red solid 5px; */
     
 }
 
