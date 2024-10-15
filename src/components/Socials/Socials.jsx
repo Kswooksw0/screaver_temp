@@ -4,8 +4,6 @@ import telegramIcon from "../../assets/icons/telegram.png"; // Correct path
 import styles from "./Socials.module.css";
 
 export const Socials = ({ navigateToAboutPage }) => {
-  // Example smart contract address
-  const contractAddress = "CA: 7GCihgDB8fe6KNjn2MYtkzZcRJQy3t9GHdC8uHYmW2hr";
 
   const handleSocialsClick = (event) => {
     event.stopPropagation();
