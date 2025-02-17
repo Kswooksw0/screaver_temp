@@ -9,6 +9,7 @@
   width: 15vw; /* Adjust logo size dynamically based on viewport width */
   max-width: 140px; /* Set a maximum width to prevent it from becoming too large */
   transition: opacity 0.2s ease; /* Smooth transition for opacity */
+  cursor: pointer;
   /* border: red solid 5px; */
 }
 

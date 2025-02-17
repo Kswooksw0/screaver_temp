@@ -25,36 +25,36 @@ const HomePage = () => {
 
   // Fetch global scream counter from Supabase
   useEffect(() => {
-    const fetchGlobalCounter = async () => {
-      const { data, error } = await supabase
-        .from("scream_counter")
-        .select("total_screams")
-        .eq("id", 1)
-        .single();
+    // const fetchGlobalCounter = async () => {
+    //   const { data, error } = await supabase
+    //     .from("scream_counter")
+    //     .select("total_screams")
+    //     .eq("id", 1)
+    //     .single();
 
-      if (error) {
-        console.error("Error fetching global counter:", error);
-      } else if (data) {
-        setGlobalCounter(data.total_screams);
-      }
-    };
+    //   if (error) {
+    //     console.error("Error fetching global counter:", error);
+    //   } else if (data) {
+    //     setGlobalCounter(data.total_screams);
+    //   }
+    // };
 
-    fetchGlobalCounter();
+    // fetchGlobalCounter();
 
-    const screamSubscription = supabase
-      .channel("scream_counter_channel")
-      .on(
-        "postgres_changes",
-        { event: "UPDATE", schema: "public", table: "scream_counter" },
-        (payload) => {
-          setGlobalCounter(payload.new.total_screams);
-        }
-      )
-      .subscribe();
+    // const screamSubscription = supabase
+    //   .channel("scream_counter_channel")
+    //   .on(
+    //     "postgres_changes",
+    //     { event: "UPDATE", schema: "public", table: "scream_counter" },
+    //     (payload) => {
+    //       setGlobalCounter(payload.new.total_screams);
+    //     }
+    //   )
+    //   .subscribe();
 
-    return () => {
-      supabase.removeChannel(screamSubscription);
-    };
+    // return () => {
+    //   supabase.removeChannel(screamSubscription);
+    // };
   }, []);
 
   // useEffect(() => {
@@ -169,7 +169,8 @@ const HomePage = () => {
       </div>
 
       <div className={styles.globalCounterContainer}>
-        <h2 className={styles.globalCount}>Total Screams: {globalCounter}</h2>
+        {/* <h2 className={styles.globalCount}>Total Screams: {globalCounter}</h2> */}
+        <h2 className={styles.globalCount}>Total Screams: 100</h2>
       </div>
     </div>
   );
